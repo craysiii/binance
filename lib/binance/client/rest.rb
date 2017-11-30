@@ -10,13 +10,32 @@ module Binance
     class REST
       BASE_URL = 'https://www.binance.com'.freeze
 
-      include REST::Public_API
-      include REST::Account_API
-      include REST::Withdraw_API
+      # Gets populated by the different APIs that get extended by the instances
+      @api = {}
+
+      class << self
+        attr_accessor :api
+      end
+
+      attr_reader :api_key, :secret_key
 
       def initialize(api_key: '', secret_key: '')
         @api_key = api_key
         @secret_key = secret_key
+
+        extend Public_API
+        extend Account_API
+        extend Withdraw_API
+      end
+
+      def request(api, method, endpoint, options = {})
+        conn = REST.api[api].call
+        response = conn.send(method) do |req|
+          req.url endpoint
+          req.params.merge! options
+        end
+
+        response.body
       end
 
       def self.add_query_param(query, key, value)

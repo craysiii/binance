@@ -7,68 +7,54 @@ module Binance
     class REST
       # API endpoints that don't require any type of authentication
       module Public_API
-        def public_api
-          Faraday.new(url: "#{BASE_URL}/api/v1") do |conn|
-            conn.request :json
-            conn.response :json, content_type: /\bjson$/
-            conn.adapter Faraday.default_adapter
+        def self.extended(_base)
+          REST.api[:public] = lambda do
+            Faraday.new(url: "#{BASE_URL}/api/v1") do |conn|
+              conn.request :json
+              conn.response :json, content_type: /\bjson$/
+              conn.adapter Faraday.default_adapter
+            end
           end
         end
 
         def ping
-          public_api.get('ping').body
+          request :public, :get, 'ping'
         end
 
         def time
-          public_api.get('time').body
+          request :public, :get, 'time'
         end
 
         def exchange_info
-          public_api.get('exchangeInfo').body
+          request :public, :get, 'exchangeInfo'
         end
 
         def products
-          public_api.get('/exchange/public/product').body
+          request :public, :get, '/exchange/public/product'
         end
 
         def depth(options)
-          response = public_api.get do |req|
-            req.url 'depth'
-            req.params.merge! options
-          end
-          response.body
+          request :public, :get, 'depth', options
         end
 
         def agg_trades(options)
-          response = public_api.get do |req|
-            req.url 'aggTrades'
-            req.params.merge! options
-          end
-          response.body
+          request :public, :get, 'aggTrades', options
         end
 
         def klines(options)
-          response = public_api.get do |req|
-            req.url 'klines'
-            req.params.merge! options
-          end
-          response.body
+          request :public, :get, 'klines', options
         end
 
         def twenty_four_hour(options)
-          response = public_api.get do |req|
-            req.url 'ticker/24hr'
-            req.params.merge! options
-          end
-          response.body
+          request :public, :get, 'ticker/24hr', options
         end
 
         def all_prices
-          public_api.get('ticker/allPrices').body
+          request :public, :get, 'ticker/allPrices'
         end
 
         def all_book_tickers
-          public_api.get('ticker/allBookTickers').body
+          request :public, :get, 'ticker/allBookTickers'
         end
       end
     end
