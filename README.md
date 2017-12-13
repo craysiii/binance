@@ -45,7 +45,7 @@ Require the gem:
 require 'binance'
 ```
 
-Create a new instance of the [REST Client](http://www.rubydoc.info/gems/binance/0.0.1/Binance/Client/REST):
+Create a new instance of the [REST Client](http://www.rubydoc.info/gems/binance):
 
 ```ruby
 # If you only plan on touching public API endpoints, you can forgo any arguments
