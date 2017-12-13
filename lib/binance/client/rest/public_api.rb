@@ -9,7 +9,7 @@ module Binance
       module Public_API
         def self.extended(_base)
           REST.api[:public] = lambda do
-            Faraday.new(url: "#{BASE_URL}/api/v1") do |conn|
+            Faraday.new(url: "#{BASE_URL}/api") do |conn|
               conn.request :json
               conn.response :json, content_type: /\bjson$/
               conn.adapter Faraday.default_adapter
@@ -30,11 +30,19 @@ module Binance
         end
 
         def products
-          request :public, :get, '/exchange/public/product'
+          request :public, :get, 'products'
         end
 
         def depth(options)
           request :public, :get, 'depth', options
+        end
+
+        def trades(options)
+          request :public, :get, 'trades', options
+        end
+
+        def historical_trades(options)
+          request :public, :get, 'historicalTrades', options
         end
 
         def agg_trades(options)
@@ -46,15 +54,25 @@ module Binance
         end
 
         def twenty_four_hour(options)
-          request :public, :get, 'ticker/24hr', options
+          request :public, :get, '24hr', options
         end
 
+        def price(options)
+          request :public, :get, 'price', options
+        end
+
+        # Ensure backwards compatibility
         def all_prices
-          request :public, :get, 'ticker/allPrices'
+          request :public, :get, 'price'
         end
 
+        def book_ticker(options)
+          request :public, :get, 'bookTicker', options
+        end
+
+        # Ensure backwards compatibility
         def all_book_tickers
-          request :public, :get, 'ticker/allBookTickers'
+          request :public, :get, 'bookTicker'
         end
       end
     end

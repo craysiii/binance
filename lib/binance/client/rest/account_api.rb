@@ -11,7 +11,7 @@ module Binance
       module Account_API
         def self.extended(base)
           REST.api[:account] = lambda do
-            Faraday.new(url: "#{BASE_URL}/api/v3") do |conn|
+            Faraday.new(url: "#{BASE_URL}/api") do |conn|
               conn.request :json
               conn.response :json, content_type: /\bjson$/
               conn.headers['X-MBX-APIKEY'] = base.api_key

@@ -12,7 +12,7 @@ module Binance
       module Withdraw_API
         def self.extended(base)
           REST.api[:withdraw] = lambda do
-            Faraday.new(url: "#{BASE_URL}/wapi/v3") do |conn|
+            Faraday.new(url: "#{BASE_URL}/wapi") do |conn|
               conn.request :url_encoded
               conn.response :json, content_type: /\bjson$/
               conn.headers['X-MBX-APIKEY'] = base.api_key
@@ -24,19 +24,19 @@ module Binance
         end
 
         def withdraw(options)
-          request :withdraw, :post, 'withdraw.html', options
+          request :withdraw, :post, 'withdraw', options
         end
 
         def deposit_history(options = {})
-          request :withdraw, :get, 'depositHistory.html', options
+          request :withdraw, :get, 'depositHistory', options
         end
 
         def withdraw_history(options = {})
-          request :withdraw, :get, 'withdrawHistory.html', options
+          request :withdraw, :get, 'withdrawHistory', options
         end
 
         def deposit_address(options)
-          request :withdraw, :get, 'depositAddress.html', options
+          request :withdraw, :get, 'depositAddress', options
         end
       end
     end

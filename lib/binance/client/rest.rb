@@ -1,5 +1,6 @@
 
 require 'faraday'
+require_relative 'rest/api_endpoints'
 require_relative 'rest/public_api'
 require_relative 'rest/account_api'
 require_relative 'rest/withdraw_api'
@@ -31,7 +32,7 @@ module Binance
       def request(api, method, endpoint, options = {})
         conn = REST.api[api].call
         response = conn.send(method) do |req|
-          req.url endpoint
+          req.url API_ENDPOINTS[endpoint]
           req.params.merge! options
         end
 
