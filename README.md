@@ -1,5 +1,7 @@
 # Binance
 
+[![Gem Version](https://badge.fury.io/rb/binance.svg)](https://badge.fury.io/rb/binance) 
+
 This is an unofficial Ruby wrapper for the Binance exchange REST API.
 
 ## Installation
