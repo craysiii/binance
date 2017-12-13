@@ -26,6 +26,10 @@ module Binance
           request :account, :post, 'order', options
         end
 
+        def create_test_order(options)
+          request :account, :post, 'order/test', options
+        end
+
         def query_order(options)
           request :account, :get, 'order', options
         end
