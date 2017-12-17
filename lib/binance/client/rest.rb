@@ -18,11 +18,12 @@ module Binance
         attr_accessor :api
       end
 
-      attr_reader :api_key, :secret_key
+      attr_reader :api_key, :secret_key, :adapter
 
-      def initialize(api_key: '', secret_key: '')
+      def initialize(api_key: '', secret_key: '', adapter: Faraday.default_adapter)
         @api_key = api_key
         @secret_key = secret_key
+        @adapter = adapter
 
         extend Public_API
         extend Account_API

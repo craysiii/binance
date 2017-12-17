@@ -7,12 +7,12 @@ module Binance
     class REST
       # API endpoints that don't require any type of authentication
       module Public_API
-        def self.extended(_base)
+        def self.extended(base)
           REST.api[:public] = lambda do
             Faraday.new(url: "#{BASE_URL}/api") do |conn|
               conn.request :json
               conn.response :json, content_type: /\bjson$/
-              conn.adapter Faraday.default_adapter
+              conn.adapter base.adapter
             end
           end
         end

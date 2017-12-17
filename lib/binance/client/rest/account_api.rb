@@ -17,7 +17,7 @@ module Binance
               conn.headers['X-MBX-APIKEY'] = base.api_key
               conn.use TimestampRequestMiddleware
               conn.use SignRequestMiddleware, base.secret_key
-              conn.adapter Faraday.default_adapter
+              conn.adapter base.adapter
             end
           end
         end
