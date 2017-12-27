@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/binance.svg)](https://badge.fury.io/rb/binance) 
 
-This is an unofficial Ruby wrapper for the Binance exchange REST API.
+This is an unofficial Ruby wrapper for the Binance exchange REST and WebSocket APIs.
 
 ## Installation
 
@@ -25,21 +25,23 @@ Or install it yourself as:
 #### Current
 
 * Basic implementation of public, account, and withdraw REST API endpoints
-* Easy to use authentication
-* Methods return parsed JSON
-* No need to generate timestamps
-* No need to generate signatures
+  * Easy to use authentication
+  * Methods return parsed JSON
+  * No need to generate timestamps
+  * No need to generate signatures
+* Basic implementation of WebSocket API
 
 #### Planned
 
 * Implementation of the User Data Stream API
-* Implementation of the Websocket API
 * Exception handling with responses
 * High level abstraction
 
 ## Getting Started
 
-Require the gem:
+#### REST Client
+
+Require Binance:
 
 ```ruby
 require 'binance'
@@ -80,6 +82,54 @@ client.deposit_address asset: 'NEO'
 
 Required and optional parameters, as well as enum values, can currently be found on the [Binance API Page](https://www.binance.com/restapipub.html). Parameters should always be passed to client methods as keyword arguments, with the same capitalization and spelling. 
 
+#### WebSocket Client
+
+Require Binance and [EventMachine](https://github.com/eventmachine/eventmachine):
+
+```ruby
+require 'binance'
+require 'eventmachine'
+```
+
+Create a new instance of the [WebSocket Client]():
+
+```ruby
+client = Binance::Client::WebSocket.new
+```
+
+Create various WebSocket streams, wrapping calls inside `EM.run`:
+
+```ruby
+EM.run do
+  # Create event handlers
+  open    = proc { puts 'connected' }
+  message = proc { |e| puts e.data }
+  error   = proc { |e| puts e }
+  close   = proc { puts 'closed' }
+
+  # Bundle our event handlers into Hash
+  methods = { open: open, message: message, error: error, close: close }
+
+  # Pass a symbol and event handler Hash to connect and process events
+  client.agg_trade symbol: 'XRPETH', methods: methods
+  
+  # kline takes an additional named parameter
+  client.kline symbol: 'XRPETH', interval: '1m', methods: methods
+
+  # As well as partial_book_depth
+  client.partial_book_depth symbol: 'XRPETH', level: '5', methods: methods
+
+  # Create a custom stream
+  client.single stream: { type: 'aggTrade', symbol: 'XRPETH'}, methods: methods
+
+  # Create multiple streams in one call
+  client.multi streams: [{ type: 'aggTrade', symbol: 'XRPETH' },
+                         { type: 'ticker', symbol: 'XRPETH' },
+                         { type: 'kline', symbol: 'XRPETH', interval: '1m'},
+                         { type: 'depth', symbol: 'XRPETH', level: '5'}],
+               methods: methods 
+end
+```
 
 ## Development
 
