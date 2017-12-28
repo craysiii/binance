@@ -90,6 +90,13 @@ module Binance
           request :withdraw, :get, 'depositAddress', options
         end
 
+        # Public: Retrieve current account status
+        #
+        # options - The Hash which hosts various REST query params
+        #   :recvWindow - The Number of how long a request is valid for in
+        #     milliseconds (optional).
+        #
+        # Returns a Hash with the request response
         def account_status(options)
           request :withdraw, :get, 'accountStatus', options
         end
