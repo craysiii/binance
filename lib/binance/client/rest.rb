@@ -30,6 +30,8 @@ module Binance
         extend Withdraw_API
       end
 
+      private
+
       def request(api, method, endpoint, options = {})
         conn = REST.api[api].call
         response = conn.send(method) do |req|
