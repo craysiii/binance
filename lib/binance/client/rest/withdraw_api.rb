@@ -89,6 +89,10 @@ module Binance
         def deposit_address(options)
           request :withdraw, :get, 'depositAddress', options
         end
+
+        def account_status(options)
+          request :withdraw, :get, 'accountStatus', options
+        end
       end
     end
   end

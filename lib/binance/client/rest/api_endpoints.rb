@@ -29,7 +29,8 @@ module Binance
         'withdraw'        => 'v3/withdraw.html',
         'depositHistory'  => 'v3/depositHistory.html',
         'withdrawHistory' => 'v3/withdrawHistory.html',
-        'depositAddress'  => 'v3/depositAddress.html'
+        'depositAddress'  => 'v3/depositAddress.html',
+        'accountStatus'   => 'v3/accountStatus.html'
       }.freeze
     end
   end
