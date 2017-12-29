@@ -17,7 +17,7 @@ module Binance
       #   :interval - The String interval to use for the kline stream (optional)
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -29,15 +29,15 @@ module Binance
 
       # Public: Create multiple WebSocket streams
       #
-      # :streams - The Array of Hashes used to define the stream.
-      #   Each Hash can have the following keys
+      # :streams - The Array of Hashes used to define the stream. Each Hash can
+      #            have the following keys:
       #   :symbol   - The String symbol the stream will listen to
       #   :type     - The String type of stream to listen to
       #   :level    - The String level to use for the depth stream (optional)
       #   :interval - The String interval to use for the kline stream (optional)
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -53,7 +53,7 @@ module Binance
       # :symbol - The String symbol the stream will listen to
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -67,7 +67,7 @@ module Binance
       # :symbol - The String symbol the stream will listen to
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -80,11 +80,12 @@ module Binance
       #
       # :symbol - The String symbol the stream will listen to
       #
-      # :interval - The String interval the stream will update with.
-      #   The intervals that may be used can be found in the Binance API docs.
+      # :interval - The String interval the stream will update with. The
+      #             intervals that may be used can be found in the Binance API
+      #             docs.
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -99,7 +100,7 @@ module Binance
       # :symbol - The String symbol the stream will listen to
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -111,7 +112,7 @@ module Binance
       # Public: Create a Ticker stream for all symbols
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -124,11 +125,11 @@ module Binance
       #
       # :symbol - The String symbol the stream will listen to
       #
-      # :level - The String interval the stream will update with.
-      #   The intervals that may be used can be found in the Binance API docs.
+      # :level - The String interval the stream will update with. The intervals
+      #          that may be used can be found in the Binance API docs.
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -143,7 +144,7 @@ module Binance
       # :symbol - The String symbol the stream will listen to
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)
@@ -172,7 +173,7 @@ module Binance
       # url - The String url that the WebSocket should try to connect to
       #
       # :methods - The Hash which contains the event handler methods to pass to
-      #   the WebSocket client
+      #            the WebSocket client
       #   :open    - The Proc called when a stream is opened (optional)
       #   :message - The Proc called when a stream receives a message
       #   :error   - The Proc called when a stream receives an error (optional)

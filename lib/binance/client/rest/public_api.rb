@@ -8,10 +8,10 @@ module Binance
       # Public: A Module containing all of the Public API endpoints
       module Public_API
         # Internal: Create Lambda that returns a new Faraday client instance
-        #   and add it to the REST class instance variable @api. This is called
-        #   while a new instance of the REST class is created.
+        # and add it to the REST class instance variable @api. This is called
+        # while a new instance of the REST class is created.
         #
-        # base - The base class that is being extended into
+        # base - The base class that is being extended into.
         def self.extended(base)
           REST.api[:public] = lambda do
             Faraday.new(url: "#{BASE_URL}/api") do |conn|
@@ -44,7 +44,7 @@ module Binance
         end
 
         # Public: Retrieve current exchange asset information. This is an
-        #   undocumented endpoint.
+        # undocumented endpoint.
         #
         # Returns a Hash with the request response
         def products
@@ -53,7 +53,7 @@ module Binance
 
         # Public: Retrieve depth information for the specified symbol
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol - The String of which trading pair to retrieve.
         #   :limit  - The Number of how many updates to request (optional).
         #
@@ -64,7 +64,7 @@ module Binance
 
         # Public: Retrieve recent trades for the specified symbol
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol - The String of which trading pair to retrieve.
         #   :limit  - The Number of how many trades to request (optional).
         #
@@ -75,7 +75,7 @@ module Binance
 
         # Public: Retrieve old trade data for the specified symbol
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol - The String of which trading pair to retrieve.
         #   :limit  - The Number of how many trades to request (optional).
         #   :fromId - The String of which trade ID to fetch from.
@@ -87,13 +87,13 @@ module Binance
 
         # Public: Retrieve aggregate trade data for the specified symbol
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol     - The String of which trading pair to retrieve.
         #   :fromId     - The String of which trade ID to fetch from (optional).
         #   :startTime  - The Timestamp of when to get trades from in
-        #     milliseconds (optional).
+        #                 milliseconds (optional).
         #   :endTime    - The Timestamp of when to get trades until in
-        #     milliseconds (optional).
+        #                 milliseconds (optional).
         #   :limit      - The Number of how many trades to request (optional).
         #
         # Returns a Hash with the request response
@@ -103,14 +103,14 @@ module Binance
 
         # Public: Retrieve kline data for the specified symbol
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol     - The String of which trading pair to retrieve.
-        #   :interval   -
-        #   :fromId - The String of which trade ID to fetch from (optional).
+        #   :interval   - The String of which interval to retrieve (optional).
+        #   :fromId     - The String of which trade ID to fetch from (optional).
         #   :startTime  - The Timestamp of when to get trades from in
-        #     milliseconds (optional).
+        #                 milliseconds (optional).
         #   :endTime    - The Timestamp of when to get trades until in
-        #     milliseconds (optional).
+        #                 milliseconds (optional).
         #   :limit      - The Number of how many trades to request (optional).
         #
         # Returns a Hash with the request response
@@ -120,7 +120,7 @@ module Binance
 
         # Public: Retrieve 24 hour ticker price data
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol - The String of which trading pair to retrieve (optional).
         #
         # Returns a Hash with the request response
@@ -130,7 +130,7 @@ module Binance
 
         # Public: Retrieve price ticker data for the specified symbol
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol - The String of which trading pair to retrieve (optional).
         #
         # Returns a Hash with the request response
@@ -147,7 +147,7 @@ module Binance
 
         # Public: Retrieve best price per quantity on the order book
         #
-        # options - The Hash which hosts various REST query params
+        # options - The Hash which hosts various REST query params.
         #   :symbol - The String of which trading pair to retrieve (optional).
         #
         # Returns a Hash with the request response
