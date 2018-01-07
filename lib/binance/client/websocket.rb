@@ -153,6 +153,21 @@ module Binance
         single stream: { symbol: symbol, type: 'depth' }, methods: methods
       end
 
+      # Public: Create a User Data stream
+      #
+      # listen_key - The String key the stream will listen to, attained by
+      #              interacting with the REST API userDataStream endpoint
+      #
+      # :methods - The Hash which contains the event handler methods to pass to
+      #            the WebSocket client
+      #   :open    - The Proc called when a stream is opened (optional)
+      #   :message - The Proc called when a stream receives a message
+      #   :error   - The Proc called when a stream receives an error (optional)
+      #   :close   - The Proc called when a stream is closed (optional)
+      def user_data(listen_key:, methods:)
+        create_stream "#{BASE_URL}/ws/#{listen_key}", methods: methods
+      end
+
       private
 
       # Internal: Create a valid URL for a WebSocket to use

@@ -4,6 +4,7 @@ require_relative 'rest/api_endpoints'
 require_relative 'rest/public_api'
 require_relative 'rest/account_api'
 require_relative 'rest/withdraw_api'
+require_relative 'rest/user_data_api'
 
 module Binance
   module Client
@@ -38,6 +39,7 @@ module Binance
         extend Public_API
         extend Account_API
         extend Withdraw_API
+        extend UserData_API
       end
 
       private

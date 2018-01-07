@@ -30,7 +30,10 @@ module Binance
         'depositHistory'  => 'v3/depositHistory.html',
         'withdrawHistory' => 'v3/withdrawHistory.html',
         'depositAddress'  => 'v3/depositAddress.html',
-        'accountStatus'   => 'v3/accountStatus.html'
+        'accountStatus'   => 'v3/accountStatus.html',
+
+        # User Data Stream API Endpoints
+        'userDataStream'  => 'v1/userDataStream'
       }.freeze
     end
   end

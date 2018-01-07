@@ -91,7 +91,7 @@ require 'binance'
 require 'eventmachine'
 ```
 
-Create a new instance of the [WebSocket Client]():
+Create a new instance of the [WebSocket Client](http://www.rubydoc.info/gems/binance):
 
 ```ruby
 client = Binance::Client::WebSocket.new
@@ -128,6 +128,36 @@ EM.run do
                          { type: 'kline', symbol: 'XRPETH', interval: '1m'},
                          { type: 'depth', symbol: 'XRPETH', level: '5'}],
                methods: methods 
+end
+```
+
+#### User Data Stream
+
+User data streams utilize both the REST and WebSocket APIs.
+
+Require Binance and [EventMachine](https://github.com/eventmachine/eventmachine):
+
+```ruby
+require 'binance'
+require 'eventmachine'
+```
+
+Create a new instance of the [REST Client](http://www.rubydoc.info/gems/binance) and [WebSocket Client](http://www.rubydoc.info/gems/binance):
+
+```ruby
+rest  = Binance::Client::REST.new api_key: 'x'
+ws    = Binance::Client::WebSocket.new
+```
+
+Request a listen key from the REST API, and then create a WebSocket stream using it.
+
+```ruby
+listen_key = rest.listen_key['listenKey']
+
+message = proc { |e| puts e.data }
+
+EM.run do
+  ws.user_data listen_key: listen_key, methods: {message: message}
 end
 ```
 
