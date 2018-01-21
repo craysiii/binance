@@ -78,7 +78,7 @@ module Binance
         # options - The Hash which hosts various REST query params.
         #   :symbol - The String of which trading pair to retrieve.
         #   :limit  - The Number of how many trades to request (optional).
-        #   :fromId - The String of which trade ID to fetch from.
+        #   :fromId - The String of which trade ID to fetch from (optional).
         #
         # Returns a Hash with the request response
         def historical_trades(options)
