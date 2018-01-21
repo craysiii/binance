@@ -82,7 +82,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def historical_trades(options)
-          request :public, :get, 'historicalTrades', options
+          request :user_data, :get, 'historicalTrades', options
         end
 
         # Public: Retrieve aggregate trade data for the specified symbol
