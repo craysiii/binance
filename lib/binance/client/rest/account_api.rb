@@ -1,32 +1,9 @@
 
-require 'faraday'
-require 'faraday_middleware'
-require_relative 'sign_request_middleware'
-require_relative 'timestamp_request_middleware'
-
 module Binance
   module Client
     class REST
       # Public: A module containing all of the Account API endpoints
       module AccountAPI
-        # Internal: Create Lambda that returns a new Faraday client instance
-        # and add it to the REST class instance variable @api. This is called
-        # while a new instance of the REST class is created.
-        #
-        # base - The base class that is being extended into
-        def self.extended(base)
-          REST.api[:account] = lambda do
-            Faraday.new(url: "#{BASE_URL}/api") do |conn|
-              conn.request :json
-              conn.response :json, content_type: /\bjson$/
-              conn.headers['X-MBX-APIKEY'] = base.api_key
-              conn.use TimestampRequestMiddleware
-              conn.use SignRequestMiddleware, base.secret_key
-              conn.adapter base.adapter
-            end
-          end
-        end
-
         # Public: Create a new order on the specified symbol for the
         # authenticated account
         #

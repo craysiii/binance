@@ -1,27 +1,9 @@
 
-require 'faraday'
-require 'faraday_middleware'
-
 module Binance
   module Client
     class REST
       # Public: A Module containing all of the Public API endpoints
       module PublicAPI
-        # Internal: Create Lambda that returns a new Faraday client instance
-        # and add it to the REST class instance variable @api. This is called
-        # while a new instance of the REST class is created.
-        #
-        # base - The base class that is being extended into.
-        def self.extended(base)
-          REST.api[:public] = lambda do
-            Faraday.new(url: "#{BASE_URL}/api") do |conn|
-              conn.request :json
-              conn.response :json, content_type: /\bjson$/
-              conn.adapter base.adapter
-            end
-          end
-        end
-
         # Public: Ping the server to test connectivity
         #
         # Returns a Hash with the request response
