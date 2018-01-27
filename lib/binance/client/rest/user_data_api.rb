@@ -8,7 +8,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def listen_key
-          request :user_data, :post, 'userDataStream'
+          request :verified, :post, 'userDataStream'
         end
 
         # Public: Ping the server to keep User Data stream alive
@@ -18,7 +18,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def keep_stream_alive(options)
-          request :user_data, :put, 'userDataStream', options
+          request :verified, :put, 'userDataStream', options
         end
 
         # Public: Close the User Data stream associated with the listen key
@@ -28,7 +28,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def close_stream(options)
-          request :user_data, :delete, 'userDataStream', options
+          request :verified, :delete, 'userDataStream', options
         end
       end
     end

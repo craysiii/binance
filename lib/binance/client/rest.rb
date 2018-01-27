@@ -35,10 +35,15 @@ module Binance
       def initialize(api_key: '', secret_key: '',
                      adapter: Faraday.default_adapter)
         @library = {}
-        @library[:public] = public_client adapter
-        @library[:account] = account_client api_key, secret_key, adapter
+        # Endpoint doesn't require an api_key or secret_key
+        @library[:public]   = public_client adapter
+        # Endpoint requires an api_key
+        @library[:verified] = verified_client api_key, adapter
+        # Endpoint requires an api_key and secret_key
+        @library[:signed]   = signed_client api_key, secret_key, adapter
+        # Endpoint requires an api_key and secret_key - for the Withdraw API
         @library[:withdraw] = withdraw_client api_key, secret_key, adapter
-        @library[:user_data] = user_data_client api_key, adapter
+
       end
 
       private
@@ -51,7 +56,7 @@ module Binance
         end
       end
 
-      def account_client(api_key, secret_key, adapter)
+      def signed_client(api_key, secret_key, adapter)
         Faraday.new(url: "#{BASE_URL}/api") do |conn|
           conn.request :json
           conn.response :json, content_type: /\bjson$/
@@ -73,7 +78,7 @@ module Binance
         end
       end
 
-      def user_data_client(api_key, adapter)
+      def verified_client(api_key, adapter)
         Faraday.new(url: "#{BASE_URL}/api") do |conn|
           conn.response :json, content_type: /\bjson$/
           conn.headers['X-MBX-APIKEY'] = api_key

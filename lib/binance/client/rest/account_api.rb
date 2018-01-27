@@ -32,7 +32,7 @@ module Binance
         #
         # Returns a Hash of the request response
         def create_order(options)
-          request :account, :post, 'order', options
+          request :signed, :post, 'order', options
         end
 
         # Public: Create a test order on the specified symbol for the
@@ -63,7 +63,7 @@ module Binance
         #
         # Returns a Hash of the request response
         def create_test_order(options)
-          request :account, :post, 'order/test', options
+          request :signed, :post, 'order/test', options
         end
 
         # Public: Query an orders status on the specified symbol for the
@@ -82,7 +82,7 @@ module Binance
         #
         # Returns a Hash of the request response
         def query_order(options)
-          request :account, :get, 'order', options
+          request :signed, :get, 'order', options
         end
 
         # Public: Cancel the order specified for the authenticated account.
@@ -102,7 +102,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def cancel_order(options)
-          request :account, :delete, 'order', options
+          request :signed, :delete, 'order', options
         end
 
         # Public: Retrieve open orders for the authenticated account
@@ -115,7 +115,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def open_orders(options)
-          request :account, :get, 'openOrders', options
+          request :signed, :get, 'openOrders', options
         end
 
         # Public: Retrieve all orders of the specified symbol for the
@@ -131,7 +131,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def all_orders(options)
-          request :account, :get, 'allOrders', options
+          request :signed, :get, 'allOrders', options
         end
 
         # Public: Retrieve account information for the authenticated account
@@ -142,7 +142,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def account_info(options = {})
-          request :account, :get, 'account', options
+          request :signed, :get, 'account', options
         end
 
         # Public: Retrieve trade data of the specified symbol for the
@@ -157,7 +157,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def account_trade_list(options)
-          request :account, :get, 'myTrades', options
+          request :signed, :get, 'myTrades', options
         end
       end
     end
