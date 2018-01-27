@@ -36,10 +36,10 @@ module Binance
         @secret_key = secret_key
         @adapter = adapter
 
-        extend Public_API
-        extend Account_API
-        extend Withdraw_API
-        extend UserData_API
+        extend PublicAPI
+        extend AccountAPI
+        extend WithdrawAPI
+        extend UserDataAPI
       end
 
       private

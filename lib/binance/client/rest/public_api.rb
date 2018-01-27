@@ -6,7 +6,7 @@ module Binance
   module Client
     class REST
       # Public: A Module containing all of the Public API endpoints
-      module Public_API
+      module PublicAPI
         # Internal: Create Lambda that returns a new Faraday client instance
         # and add it to the REST class instance variable @api. This is called
         # while a new instance of the REST class is created.
