@@ -159,6 +159,33 @@ module Binance
         def account_trade_list(options)
           request :signed, :get, 'myTrades', options
         end
+
+        # Public: Retrieve the listen key for the given api key
+        #
+        # Returns a Hash with the request response
+        def listen_key
+          request :verified, :post, 'userDataStream'
+        end
+
+        # Public: Ping the server to keep User Data stream alive
+        #
+        # options - The Hash which hosts various REST query params.
+        #   :listen_key - The String of which stream to keep alive
+        #
+        # Returns a Hash with the request response
+        def keep_stream_alive(options)
+          request :verified, :put, 'userDataStream', options
+        end
+
+        # Public: Close the User Data stream associated with the listen key
+        #
+        # options - The Hash which hosts various REST query params.
+        #   :listen_key - The String of which stream to close
+        #
+        # Returns a Hash with the request response
+        def close_stream(options)
+          request :verified, :delete, 'userDataStream', options
+        end
       end
     end
   end

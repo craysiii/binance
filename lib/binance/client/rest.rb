@@ -8,7 +8,6 @@ require_relative 'rest/timestamp_request_middleware'
 require_relative 'rest/public_api'
 require_relative 'rest/account_api'
 require_relative 'rest/withdraw_api'
-require_relative 'rest/user_data_api'
 
 require_relative 'rest/api_endpoints'
 
@@ -22,7 +21,6 @@ module Binance
       include PublicAPI
       include AccountAPI
       include WithdrawAPI
-      include UserDataAPI
 
       # Public: Initialize a REST Client
       #
