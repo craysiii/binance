@@ -24,16 +24,18 @@ Or install it yourself as:
 
 #### Current
 
-* Basic implementation of public, account, and withdraw REST API endpoints
+* Basic implementation of REST API
   * Easy to use authentication
   * Methods return parsed JSON
   * No need to generate timestamps
   * No need to generate signatures
 * Basic implementation of WebSocket API
+  * Pass procs or lambdas to event handlers
+  * Single and multiple streams supported
+  * Runs on EventMachine
 
 #### Planned
 
-* Implementation of the User Data Stream API
 * Exception handling with responses
 * High level abstraction
 
@@ -80,7 +82,7 @@ client.deposit_address asset: 'NEO'
 # => {"address"=>"AHXeTWYv8qZQhQ2WNrBza9LHyzdZtFnbaT", "success"=>true, "addressTag"=>"", "asset"=>"NEO"}
 ```
 
-Required and optional parameters, as well as enum values, can currently be found on the [Binance API Page](https://www.binance.com/restapipub.html). Parameters should always be passed to client methods as keyword arguments, with the same capitalization and spelling. 
+Required and optional parameters, as well as enum values, can currently be found on the [Binance API Page](https://www.binance.com/restapipub.html) or in the individual method comments. Parameters should always be passed to client methods as keyword arguments, with the same capitalization and spelling. 
 
 #### WebSocket Client
 
