@@ -18,7 +18,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def withdraw(options)
-          request :withdraw, :post, 'withdraw', options
+          request :withdraw, :post, :withdraw, options
         end
 
         # Public: Retrieve the deposit history for the authenticated account
@@ -35,7 +35,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def deposit_history(options = {})
-          request :withdraw, :get, 'depositHistory', options
+          request :withdraw, :get, :depositHistory, options
         end
 
         # Public: Retrieve the withdraw history for the authenticated account
@@ -52,7 +52,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def withdraw_history(options = {})
-          request :withdraw, :get, 'withdrawHistory', options
+          request :withdraw, :get, :withdrawHistory, options
         end
 
         # Public: Retrieve the deposit address for a specific asset
@@ -64,7 +64,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def deposit_address(options)
-          request :withdraw, :get, 'depositAddress', options
+          request :withdraw, :get, :depositAddress, options
         end
 
         # Public: Retrieve current account status
@@ -75,7 +75,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def account_status(options)
-          request :withdraw, :get, 'accountStatus', options
+          request :withdraw, :get, :accountStatus, options
         end
       end
     end

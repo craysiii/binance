@@ -8,21 +8,21 @@ module Binance
         #
         # Returns a Hash with the request response
         def ping
-          request :public, :get, 'ping'
+          request :public, :get, :ping
         end
 
         # Public: Retrieve the server time in milliseconds
         #
         # Returns a Hash with the request response
         def time
-          request :public, :get, 'time'
+          request :public, :get, :time
         end
 
         # Public: Retrieve current exchange trading rules and symbol information
         #
         # Returns a Hash with the request response
         def exchange_info
-          request :public, :get, 'exchangeInfo'
+          request :public, :get, :exchangeInfo
         end
 
         # Public: Retrieve current exchange asset information. This is an
@@ -30,7 +30,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def products
-          request :public, :get, 'products'
+          request :public, :get, :products
         end
 
         # Public: Retrieve depth information for the specified symbol
@@ -41,7 +41,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def depth(options)
-          request :public, :get, 'depth', options
+          request :public, :get, :depth, options
         end
 
         # Public: Retrieve recent trades for the specified symbol
@@ -52,7 +52,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def trades(options)
-          request :public, :get, 'trades', options
+          request :public, :get, :trades, options
         end
 
         # Public: Retrieve old trade data for the specified symbol
@@ -64,7 +64,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def historical_trades(options)
-          request :verified, :get, 'historicalTrades', options
+          request :verified, :get, :historicalTrades, options
         end
 
         # Public: Retrieve aggregate trade data for the specified symbol
@@ -80,7 +80,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def agg_trades(options)
-          request :public, :get, 'aggTrades', options
+          request :public, :get, :aggTrades, options
         end
 
         # Public: Retrieve kline data for the specified symbol
@@ -97,7 +97,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def klines(options)
-          request :public, :get, 'klines', options
+          request :public, :get, :klines, options
         end
 
         # Public: Retrieve 24 hour ticker price data
@@ -107,7 +107,7 @@ module Binance
         #
         # Returns a Hash with the request response
         def twenty_four_hour(options)
-          request :public, :get, '24hr', options
+          request :public, :get, :twenty_four_hour, options
         end
 
         # Public: Retrieve price ticker data for the specified symbol
@@ -117,14 +117,14 @@ module Binance
         #
         # Returns a Hash with the request response
         def price(options)
-          request :public, :get, 'price', options
+          request :public, :get, :price, options
         end
 
         # Public: Retrieve all price ticker data
         #
         # Returns a Hash with the request response
         def all_prices
-          request :public, :get, 'price'
+          request :public, :get, :price
         end
 
         # Public: Retrieve best price per quantity on the order book
@@ -134,14 +134,14 @@ module Binance
         #
         # Returns a Hash with the request response
         def book_ticker(options)
-          request :public, :get, 'bookTicker', options
+          request :public, :get, :bookTicker, options
         end
 
         # Public: Retrieve all book ticker data  for all symbols
         #
         # Returns a Hash with the request response
         def all_book_tickers
-          request :public, :get, 'bookTicker'
+          request :public, :get, :bookTicker
         end
       end
     end
