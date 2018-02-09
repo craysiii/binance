@@ -16,7 +16,7 @@ module Binance
     # Public: Client with methods mirroring the Binance REST APIs
     class REST
       # Public: String base url for REST client to use
-      BASE_URL = 'https://www.binance.com'.freeze
+      BASE_URL = 'https://api.binance.com'.freeze
 
       include PublicAPI
       include AccountAPI
