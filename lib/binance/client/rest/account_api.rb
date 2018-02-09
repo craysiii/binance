@@ -114,7 +114,7 @@ module Binance
         #                 milliseconds (optional).
         #
         # Returns a Hash with the request response
-        def open_orders(**options)
+        def open_orders(options = {})
           request :signed, :get, :openOrders, options
         end
 
