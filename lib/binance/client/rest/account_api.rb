@@ -75,7 +75,7 @@ module Binance
         #                        (optional).
         #   :orderId           - The String determining which order to query
         #                        (optional).
-        #   :origClientOrderId - The String determining which order to cancel
+        #   :origClientOrderId - The String determining which order to query
         #                        (optional).
         #   :recvWindow        - The Number of how long a request is valid for
         #                        in milliseconds (optional).
