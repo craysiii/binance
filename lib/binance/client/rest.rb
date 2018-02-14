@@ -42,7 +42,7 @@ module Binance
         # Endpoint requires an api_key and secret_key - for the Withdraw API
         @library[:withdraw] = withdraw_client api_key, secret_key, adapter
         # Endpoint doesn't require an api_key or secret_key
-        @library[:public_withdraw]   = public_withdraw_client adapter
+        @library[:public_withdraw] = public_withdraw_client adapter
 
       end
 
