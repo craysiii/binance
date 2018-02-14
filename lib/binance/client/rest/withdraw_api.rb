@@ -77,6 +77,13 @@ module Binance
         def account_status(options)
           request :withdraw, :get, :accountStatus, options
         end
+        
+        # Public: Retrieve current system status.
+        #
+        # Returns a Hash with the request response
+        def system_status
+          request :public_withdraw, :get, :systemStatus
+        end
       end
     end
   end

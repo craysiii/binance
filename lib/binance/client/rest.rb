@@ -41,6 +41,8 @@ module Binance
         @library[:signed]   = signed_client api_key, secret_key, adapter
         # Endpoint requires an api_key and secret_key - for the Withdraw API
         @library[:withdraw] = withdraw_client api_key, secret_key, adapter
+        # Endpoint doesn't require an api_key or secret_key
+        @library[:public_withdraw] = public_withdraw_client adapter
 
       end
 
@@ -72,6 +74,14 @@ module Binance
           conn.headers['X-MBX-APIKEY'] = api_key
           conn.use TimestampRequestMiddleware
           conn.use SignRequestMiddleware, secret_key
+          conn.adapter adapter
+        end
+      end
+      
+      def public_withdraw_client(adapter)
+        Faraday.new(url: "#{BASE_URL}/wapi") do |conn|
+          conn.request :json
+          conn.response :json, content_type: /\bjson$/
           conn.adapter adapter
         end
       end
