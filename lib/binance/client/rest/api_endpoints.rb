@@ -32,7 +32,7 @@ module Binance
         withdrawHistory: 'v3/withdrawHistory.html',
         depositAddress:  'v3/depositAddress.html',
         accountStatus:   'v3/accountStatus.html',
-        systemStatus:    'v3/systemStatus.html',
+        systemStatus:    'v3/systemStatus.html'
       }.freeze
     end
   end
