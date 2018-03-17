@@ -66,7 +66,7 @@ module Binance
       end
 
       def signed(http_method, path, params = {})
-        verified_request.extend(Binance::Client::REST::SignedFullPath).tap do |request|
+        verified_request(http_method, path, params).extend(Binance::Client::REST::SignedFullPath).tap do |request|
           request.set_secret(@secret_key)
         end
       end
