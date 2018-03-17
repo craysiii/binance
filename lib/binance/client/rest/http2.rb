@@ -69,13 +69,13 @@ module Binance
       end
 
       def signed(http_method, path, params = {})
-        verified_request(http_method, path, params).extend(Binance::Client::REST::SignedFullPath).tap do |request|
+        verified(http_method, path, params).extend(Binance::Client::REST::SignedFullPath).tap do |request|
           request.set_secret(@secret_key)
         end
       end
 
       def timestamped(http_method, path, params = {})
-        signed_request(
+        signed(
           http_method, path,
           params.merge('timestamp' => DateTime.now.strftime('%Q'))
         )

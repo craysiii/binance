@@ -2,7 +2,7 @@
 module Binance
   module Client
     class REST
-      module SignedFullpath
+      module SignedFullPath
         def set_secret(secret)
           @secret = secret
         end
@@ -11,7 +11,7 @@ module Binance
           path = super
           params = path.split('?', 2).last
           signature = OpenSSL::HMAC.hexdigest(
-            OpenSSL::Digest.new('sha256', @secret, params)
+            OpenSSL::Digest.new('sha256'), @secret, params
           )
           @secret = nil
           path + "&signature=%s" % signature
