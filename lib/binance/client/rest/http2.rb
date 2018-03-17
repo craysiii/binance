@@ -38,14 +38,17 @@ module Binance
 
       def request(api, http_method, api_method, params = {})
         case api
-        when :public, :verified, :signed
-          request_method = api
+        when :public
+          request_method = :public
           path = '/api/%s' % Binance::Client::REST::API_ENDPOINTS[api_method]
-        when :withdraw
-          request_method = :signed
-          path = '/wapi/%s' % Binance::Client::REST::API_ENDPOINTS[api_method]
         when :public_withdraw
           request_method = :public
+          path = '/wapi/%s' % Binance::Client::REST::API_ENDPOINTS[api_method]
+        when :verified, :signed
+          request_method = :timestamped
+          path = '/api/%s' % Binance::Client::REST::API_ENDPOINTS[api_method]
+        when :withdraw
+          request_method = :timestamped
           path = '/wapi/%s' % Binance::Client::REST::API_ENDPOINTS[api_method]
         else
           raise TypeError, "Unknown request endpoint: #{api.inspect}"
