@@ -94,7 +94,10 @@ module Binance
           action: :get, endpoint: :account_status },
         # #system_status
         { name: :system_status, client: :public_withdraw,
-          action: :get, endpoint: :system_status }
+          action: :get, endpoint: :system_status },
+        # #withdraw_fee
+        { name: :withdraw_fee, client: :withdraw,
+          action: :get, endpoint: :withdraw_fee }
       ].freeze
     end
   end
