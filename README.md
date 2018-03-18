@@ -70,7 +70,7 @@ client.klines symbol: 'NEOETH', interval: '1m', limit: 1
 # 1511682539999, "0.00000000", 0, "0.00000000", "0.00000000", "2885926.46000000"]]
 
 # Create an order
-client.create_order symbol: 'XRPETH', side: 'BUY', type: 'LIMIT', 
+client.create_order! symbol: 'XRPETH', side: 'BUY', type: 'LIMIT', 
   timeInForce: 'GTC', quantity: '100.00000000', price: '0.00055000'
 # => {"symbol"=>"XRPETH", "orderId"=>918248, "clientOrderId"=>"kmUU0i6cMWzq1NElE6ZTdu", 
 # "transactTime"=>1511685028420, "price"=>"0.00055000", "origQty"=>"100.00000000", 
