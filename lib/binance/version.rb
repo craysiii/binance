@@ -1,4 +1,4 @@
 
 module Binance
-  VERSION = '0.4.3'.freeze
+  VERSION = '1.0'.freeze
 end
