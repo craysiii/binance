@@ -26,7 +26,7 @@ module Binance
         define_method(method[:name]) do |options = {}|
           response = @clients[method[:client]].send(method[:action]) do |req|
             req.url ENDPOINTS[method[:endpoint]]
-            req.params.merge! options
+            req.params.merge! options.map { |k, v| [camelize(k.to_s), v] }.to_h
           end
           response.body
         end
@@ -36,6 +36,11 @@ module Binance
         query = query.to_s
         query << '&' unless query.empty?
         query << "#{Faraday::Utils.escape key}=#{Faraday::Utils.escape value}"
+      end
+
+      def camelize(str)
+        str.split('_')
+           .map.with_index { |word, i| i.zero? ? word : word.capitalize }.join
       end
     end
   end
