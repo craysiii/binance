@@ -4,6 +4,10 @@
 
 This is an unofficial Ruby wrapper for the Binance exchange REST and WebSocket APIs.
 
+##### Notice
+
+We are now at 1.0 and there are breaking changes, mainly with some method names and the casing of keys. Be sure to check out the code while I work on better documentation.
+
 ## Installation
 
 Add this line to your application's Gemfile:
