@@ -62,7 +62,7 @@ module Binance
           action: :get, endpoint: :all_orders },
         # #account_info
         { name: :account_info, client: :signed,
-          action: :get, endpoint: :account_info },
+          action: :get, endpoint: :account },
         # #my_trades
         { name: :my_trades, client: :signed,
           action: :get, endpoint: :my_trades },
