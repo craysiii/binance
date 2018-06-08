@@ -13,9 +13,6 @@ module Binance
         # #exchange_info
         { name: :exchange_info, client: :public,
           action: :get, endpoint: :exchange_info },
-        # #products
-        { name: :products, client: :public,
-          action: :get, endpoint: :products },
         # #depth
         { name: :depth, client: :public,
           action: :get, endpoint: :depth },

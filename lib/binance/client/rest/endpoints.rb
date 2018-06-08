@@ -7,7 +7,6 @@ module Binance
         ping:              'v1/ping',
         time:              'v1/time',
         exchange_info:     'v1/exchangeInfo',
-        products:          '/exchange/public/products',
         depth:             'v1/depth',
         trades:            'v1/trades',
         historical_trades: 'v1/historicalTrades',
