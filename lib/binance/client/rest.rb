@@ -1,4 +1,3 @@
-
 require 'faraday'
 
 require_relative 'rest/sign_request_middleware'

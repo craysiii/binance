@@ -1,4 +1,3 @@
-
 require 'faraday_middleware'
 
 module Binance

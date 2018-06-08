@@ -1,4 +1,3 @@
-
 module Binance
   module Client
     class REST
