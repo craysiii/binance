@@ -13,6 +13,7 @@ module Binance
         klines:            'v1/klines',
         twenty_four_hour:  'v1/ticker/24hr',
         price:             'v3/ticker/price',
+        all_prices:        'v3/ticker/allPrices',
         book_ticker:       'v3/ticker/bookTicker',
 
         # Account API Endpoints

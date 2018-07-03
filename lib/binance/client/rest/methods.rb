@@ -33,6 +33,9 @@ module Binance
         # #price
         { name: :price, client: :public,
           action: :get, endpoint: :price },
+        # #all_prices
+        { name: :all_prices, client: :public,
+          action: :get, endpoint: :price },
         # #book_ticker
         { name: :book_ticker, client: :public,
           action: :get, endpoint: :book_ticker },
