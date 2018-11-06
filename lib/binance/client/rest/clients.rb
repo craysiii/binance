@@ -38,8 +38,8 @@ module Binance
         end
       end
 
-      def withdraw_client(api_key, secret_key, adapter)
-        Faraday.new(url: "#{BASE_URL}/wapi") do |conn|
+      def withdraw_client(api_key, secret_key, adapter, proxy)
+        Faraday.new(url: "#{BASE_URL}/wapi", proxy: proxy) do |conn|
           conn.request :url_encoded
           conn.response :json, content_type: /\bjson$/
           conn.headers['X-MBX-APIKEY'] = api_key

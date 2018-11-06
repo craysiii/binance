@@ -12,12 +12,12 @@ module Binance
       BASE_URL = 'https://api.binance.com'.freeze
 
       def initialize(api_key: '', secret_key: '',
-                     adapter: Faraday.default_adapter)
+                     adapter: Faraday.default_adapter, proxy: nil)
         @clients = {}
         @clients[:public]   = public_client adapter
         @clients[:verified] = verified_client api_key, adapter
         @clients[:signed]   = signed_client api_key, secret_key, adapter
-        @clients[:withdraw] = withdraw_client api_key, secret_key, adapter
+        @clients[:withdraw] = withdraw_client api_key, secret_key, adapter, proxy
         @clients[:public_withdraw] = public_withdraw_client adapter
       end
 
