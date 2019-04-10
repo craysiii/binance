@@ -94,9 +94,9 @@ module Binance
         # #system_status
         { name: :system_status, client: :public_withdraw,
           action: :get, endpoint: :system_status },
-        # #withdraw_fee
-        { name: :withdraw_fee, client: :withdraw,
-          action: :get, endpoint: :withdraw_fee },
+        # #asset detail
+        { name: :asset_detail, client: :withdraw,
+          action: :get, endpoint: :asset_detail },
         # dust_log
         { name: :dust_log, client: :withdraw,
           action: :get, endpoint: :dust_log }
