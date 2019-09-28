@@ -9,10 +9,14 @@ require_relative 'rest/methods'
 module Binance
   module Client
     class REST
-      BASE_URL = 'https://api.binance.com'.freeze
+      BASE_URL = ''
+      US_BASED = 'https://api.binance.us'
+      NON_US_BASED = 'https://api.binance.com'
 
-      def initialize(api_key: '', secret_key: '',
+      def initialize(api_key: '', secret_key: '', type: 'non_us_based',
                      adapter: Faraday.default_adapter)
+        url = (type == 'us_based') ? US_BASED : NON_US_BASED
+        BASE_URL.replace url
         @clients = {}
         @clients[:public]   = public_client adapter
         @clients[:verified] = verified_client api_key, adapter
