@@ -99,7 +99,30 @@ module Binance
           action: :get, endpoint: :withdraw_fee },
         # dust_log
         { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log }
+          action: :get, endpoint: :dust_log },
+
+        # Margi API Methods
+        # #creat_margin_order!
+        { name: :create_margin_order!, client: :margin,
+          action: :post, endpoint: :margin_order },
+        # #repay
+        { name: :repay, client: :margin,
+          action: :post, endpoint: :repay },
+        # #open_loan
+        { name: :open_loan, client: :margin,
+          action: :post, endpoint: :loan },
+        # #query_loan
+        { name: :query_loan, client: :margin,
+          action: :get, endpoint: :loan },
+        # #query_margin_order
+        { name: :query_margin_order, client: :margin,
+          action: :get, endpoint: :margin_order },
+        # #interest_history
+        { name: :interest_history, client: :margin,
+          action: :get, endpoint: :interest_history },
+        # #margin_account
+        { name: :margin_account, client: :margin,
+          action: :get, endpoint: :margin_account }
       ].freeze
     end
   end
