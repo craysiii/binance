@@ -25,6 +25,7 @@ module Binance
         user_data_stream: 'v1/userDataStream',
 
         # Withdraw API Endpoints
+                balance:          'v1/balance',
         withdraw:         'v3/withdraw.html',
         deposit_history:  'v3/depositHistory.html',
         withdraw_history: 'v3/withdrawHistory.html',
@@ -35,5 +36,10 @@ module Binance
         dust_log:         'v3/userAssetDribbletLog.html'
       }.freeze
     end
+
+        class REST_FUTURE
+            ENDPOINTS = Binance::Client::REST::ENDPOINTS
+        end
+
   end
 end

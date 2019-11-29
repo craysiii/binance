@@ -102,5 +102,13 @@ module Binance
           action: :get, endpoint: :dust_log }
       ].freeze
     end
+
+        class REST_FUTURE
+            METHODS = Binance::Client::REST::METHODS.dup.append(
+                # Withdraw API Methods
+                { name: :balance, client: :signed,
+                action: :get, endpoint: :balance }
+                ).freeze
+        end
   end
 end
