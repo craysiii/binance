@@ -189,17 +189,23 @@ module Binance
                 { name: :leverage, client: :signed,
                 action: :get, endpoint: :leverage },
                 # # listenKey
-                { name: :listenKey, client: :verified,
+                { name: :listenKey, client: :signed,
                 action: :post, endpoint: :listenKey },
+				# # listenKey
+                { name: :getlistenKey, client: :signed,
+                action: :get, endpoint: :listenKey },
                 # # position_risk
                 { name: :position_risk, client: :signed,
                 action: :get, endpoint: :position_risk },
                 # # premium_index
                 { name: :premium_index, client: :signed,
                 action: :get, endpoint: :premium_index },
-                # #withdraw!
+				# #withdraw!
                 { name: :withdraw!, client: :withdraw,
                 action: :post, endpoint: :withdraw },
+				# #balance
+                { name: :balance, client: :signed,
+                action: :get, endpoint: :balance },
 
                 # NOT FOUND IN FUTURE API (yet)
                 # #my_trades
