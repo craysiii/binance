@@ -99,7 +99,10 @@ module Binance
           action: :get, endpoint: :withdraw_fee },
         # dust_log
         { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log }
+          action: :get, endpoint: :dust_log },
+        # dividend_log
+        { name: :dividend_log, client: :dividend,
+          action: :get, endpoint: :dividend_log }
       ].freeze
     end
   end
