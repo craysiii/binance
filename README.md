@@ -167,6 +167,35 @@ EM.run do
 end
 ```
 
+#### REST Future Client
+
+Create a new instance of the [REST Future Client](http://www.rubydoc.info/gems/binance):
+
+```ruby
+# If you only plan on touching public API endpoints, you can forgo any arguments
+client = Binance::Client::REST_FUTURE.new
+# Otherwise provide an api_key and secret_key as keyword arguments
+client = Binance::Client::REST_FUTURE.new api_key: 'x', secret_key: 'y'
+```
+
+Example of order book of BTCUSDT futures and current balance:
+
+```ruby
+puts "Future depth:"
+puts client.depth(symbol: 'BTCUSDT', limit: '5').inspect
+puts "Future Balance:"
+puts client.balance.inspect
+```
+
+#### WebSocket Future Client
+
+Create a new instance of the [WebSocket Future Client](http://www.rubydoc.info/gems/binance):
+
+```ruby
+client = Binance::Client::WebSocketFuture.new
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
