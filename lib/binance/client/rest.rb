@@ -33,8 +33,8 @@ module Binance
 
       def self.add_query_param(query, key, value)
         query = query.to_s
-        query << '&' unless query.empty?
-        query << "#{Faraday::Utils.escape key}=#{Faraday::Utils.escape value}"
+        query += '&' unless query.empty?
+        query + "#{Faraday::Utils.escape key}=#{Faraday::Utils.escape value}"
       end
 
       def camelize(str)
