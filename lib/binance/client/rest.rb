@@ -19,6 +19,7 @@ module Binance
         @clients[:signed]   = signed_client api_key, secret_key, adapter, proxy
         @clients[:withdraw] = withdraw_client api_key, secret_key, adapter, proxy
         @clients[:public_withdraw] = public_withdraw_client adapter, proxy
+        @clients[:margin] = margin_client api_key, secret_key, adapter, proxy
       end
 
       METHODS.each do |method|

@@ -102,7 +102,11 @@ module Binance
           action: :get, endpoint: :dust_log },
         # asset_detail
         { name: :asset_detail, client: :withdraw,
-          action: :get, endpoint: :asset_detail }
+          action: :get, endpoint: :asset_detail },
+        #get_all
+        { name: :get_all, client: :margin,
+          action: :get, endpoint: :get_all
+        }
       ].freeze
     end
   end
