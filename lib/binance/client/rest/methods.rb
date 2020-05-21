@@ -99,7 +99,14 @@ module Binance
           action: :get, endpoint: :withdraw_fee },
         # dust_log
         { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log }
+          action: :get, endpoint: :dust_log },
+        # asset_detail
+        { name: :asset_detail, client: :withdraw,
+          action: :get, endpoint: :asset_detail },
+        #get_all
+        { name: :get_all, client: :margin,
+          action: :get, endpoint: :get_all
+        }
       ].freeze
     end
   end
