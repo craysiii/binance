@@ -101,11 +101,13 @@ module Binance
         { name: :dust_log, client: :withdraw,
           action: :get, endpoint: :dust_log },
 
-        # Broker and SubAccount API Methods
+        # Broker API Methods
         { name: :broker_info, client: :broker, 
           action: :get, endpoint: :broker_info },
         { name: :broker_rebates, client: :broker, 
           action: :get, endpoint: :broker_rebates },
+        
+        # Subaccount API Methods  
         { name: :create_sub_account!, client: :broker,
           action: :post, endpoint: :sub_account },
         { name: :get_sub_account, client: :broker,
@@ -123,7 +125,7 @@ module Binance
         { name: :change_sub_account_api_permission!, client: :broker,
           action: :post, endpoint: :sub_account_api_permission },
         { name: :change_sub_account_commission, client: :broker,
-          action: :post, endpoint: :sub_account_api_commission }
+          action: :post, endpoint: :sub_account_api_commission },
         { name: :sub_account_transfer, client: :broker,
           action: :post, endpoint: :sub_account_transfer },
         { name: :sub_account_transfer_history, client: :broker,
