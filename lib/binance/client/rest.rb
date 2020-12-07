@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 
 require_relative 'rest/sign_request_middleware'
@@ -9,7 +11,7 @@ require_relative 'rest/methods'
 module Binance
   module Client
     class REST
-      BASE_URL = 'https://api.binance.com'.freeze
+      BASE_URL = 'https://api.binance.com'
 
       def initialize(api_key: '', secret_key: '',
                      adapter: Faraday.default_adapter)

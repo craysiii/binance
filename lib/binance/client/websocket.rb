@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faye/websocket'
 
 module Binance
@@ -5,7 +7,7 @@ module Binance
     # Public: Client with methods mirroring the Binance WebSocket API
     class WebSocket
       # Public: String base url for WebSocket client to use
-      BASE_URL = 'wss://stream.binance.com:9443'.freeze
+      BASE_URL = 'wss://stream.binance.com:9443'
 
       # Public: Create a single WebSocket stream
       #
