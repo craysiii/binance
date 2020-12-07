@@ -99,7 +99,7 @@ module Binance
           action: :get, endpoint: :withdraw_fee },
         # dust_log
         { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log }
+          action: :get, endpoint: :dust_log },
 
         # Broker API Methods
         { name: :broker_info, client: :broker, 
