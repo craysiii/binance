@@ -101,7 +101,7 @@ module Binance
         { name: :dust_log, client: :withdraw,
           action: :get, endpoint: :dust_log },
 
-        # Broker API Methods
+        # Broker and SubAccount API Methods
         { name: :broker_info, client: :broker, 
           action: :get, endpoint: :broker_info },
         { name: :broker_rebates, client: :broker, 
