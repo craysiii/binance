@@ -6,3 +6,5 @@ Gemfile.lock
 
 # Don't include Rubymine config
 .idea
+
+local_env.yml
