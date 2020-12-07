@@ -1,12 +1,12 @@
 # Binance
 
-[![Gem Version](https://badge.fury.io/rb/binance.svg)](https://badge.fury.io/rb/binance) 
-
 This is an unofficial Ruby wrapper for the Binance exchange REST and WebSocket APIs.
 
 ##### Notice
 
-We are now at 1.0 and there are breaking changes, mainly with some method names and the casing of keys. Be sure to check out the code while I work on better documentation.
+This is a fork of [craysii/Binance](https://github.com/craysiii/binance).
+
+Not trying to take credit for anything, just want to add new features such as margin and future trading.
 
 ## Installation
 
