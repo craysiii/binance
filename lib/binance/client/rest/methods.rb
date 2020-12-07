@@ -100,6 +100,36 @@ module Binance
         # dust_log
         { name: :dust_log, client: :withdraw,
           action: :get, endpoint: :dust_log }
+
+        # Broker API Methods
+        { name: :broker_info, client: :broker, 
+          action: :get, endpoint: :broker_info },
+        { name: :broker_rebates, client: :broker, 
+          action: :get, endpoint: :broker_rebates },
+        { name: :create_sub_account!, client: :broker,
+          action: :post, endpoint: :sub_account },
+        { name: :get_sub_account, client: :broker,
+          action: :get, endpoint: :sub_account },
+        { name: :get_sub_account_deposit_address, client: :withdraw, 
+          action: :get, endpoint: :deposit_address },
+        { name: :get_sub_account_deposit_history, client: :broker, 
+          action: :get, endpoint: :sub_account_deposits },
+        { name: :create_sub_account_api_key!, client: :broker,
+          action: :post, endpoint: :sub_account_api },
+        { name: :delete_sub_account_api_key!, client: :broker,
+          action: :delete, endpoint: :sub_account_api },
+        { name: :get_sub_account_api_key, client: :broker,
+          action: :get, endpoint: :sub_account_api },
+        { name: :change_sub_account_api_permission!, client: :broker,
+          action: :post, endpoint: :sub_account_api_permission },
+        { name: :change_sub_account_commission, client: :broker,
+          action: :post, endpoint: :sub_account_api_commission }
+        { name: :sub_account_transfer, client: :broker,
+          action: :post, endpoint: :sub_account_transfer },
+        { name: :sub_account_transfer_history, client: :broker,
+          action: :get, endpoint: :sub_account_transfer },
+        { name: :sub_account_balances, client: :broker,
+          action: :get, endpoint: :sub_account_balances }
       ].freeze
     end
   end

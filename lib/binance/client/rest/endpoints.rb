@@ -32,7 +32,20 @@ module Binance
         account_status:   'v3/accountStatus.html',
         system_status:    'v3/systemStatus.html',
         withdraw_fee:     'v3/withdrawFee.html',
-        dust_log:         'v3/userAssetDribbletLog.html'
+        dust_log:         'v3/userAssetDribbletLog.html',
+
+        # Broker API Endpoints
+        # https://binance-docs.github.io/Brokerage-API/General/
+        broker_info:                 'v1/broker/info',
+        broker_rebates:              'v1/broker/rebate/recentRecord',
+        sub_account:                 'v1/broker/subAccount',
+        sub_account_api:             'v1/broker/subAccountApi',
+        sub_account_permission:      'v1/broker/subAccountApi/permission',
+        sub_account_commission:      'v1/broker/subAccountApi/commission',
+        sub_account_transfer:        'v1/broker/transfer',
+        sub_account_deposit_address: 'v3/depositAddress.html',
+        sub_account_deposit_history: 'v1/broker/subAccount/depositHistory',
+        sub_account_balances:        'v1/broker/subAccount/spotSummary'
       }.freeze
     end
   end
