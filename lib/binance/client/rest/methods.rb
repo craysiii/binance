@@ -41,6 +41,8 @@ module Binance
           action: :get, endpoint: :book_ticker },
 
         # Account API Methods
+        { name: :coins_info, client: :broker,
+          action: :get, endpoint: :coins_info },
         # #create_order!
         { name: :create_order!, client: :signed,
           action: :post, endpoint: :order },

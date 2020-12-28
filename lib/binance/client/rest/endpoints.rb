@@ -6,6 +6,7 @@ module Binance
         ping:              'v1/ping',
         time:              'v1/time',
         exchange_info:     'v1/exchangeInfo',
+        coins_info:        'v1/capital/config/getall',
         depth:             'v1/depth',
         trades:            'v1/trades',
         historical_trades: 'v1/historicalTrades',
