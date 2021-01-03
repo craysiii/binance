@@ -8,7 +8,7 @@ module Binance
           conn.request :json
           conn.response :json, content_type: /\bjson$/
           conn.adapter adapter
-          conn.proxy proxy
+          conn.proxy=proxy
         end
       end
 
@@ -17,7 +17,7 @@ module Binance
           conn.response :json, content_type: /\bjson$/
           conn.headers['X-MBX-APIKEY'] = api_key
           conn.adapter adapter
-          conn.proxy proxy
+          conn.proxy=proxy
         end
       end
 
@@ -29,7 +29,7 @@ module Binance
           conn.use TimestampRequestMiddleware
           conn.use SignRequestMiddleware, secret_key
           conn.adapter adapter
-          conn.proxy proxy
+          conn.proxy=proxy
         end
       end
 
@@ -38,7 +38,7 @@ module Binance
           conn.request :json
           conn.response :json, content_type: /\bjson$/
           conn.adapter adapter
-          conn.proxy proxy
+          conn.proxy=proxy
         end
       end
 
@@ -50,7 +50,7 @@ module Binance
           conn.use TimestampRequestMiddleware
           conn.use SignRequestMiddleware, secret_key
           conn.adapter adapter
-          conn.proxy proxy
+          conn.proxy=proxy
         end
       end
 
@@ -62,7 +62,7 @@ module Binance
           conn.use TimestampRequestMiddleware
           conn.use SignRequestMiddleware, secret_key
           conn.adapter adapter
-          conn.proxy proxy
+          conn.proxy=proxy
         end
       end
 
