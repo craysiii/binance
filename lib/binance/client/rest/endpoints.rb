@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# https://binance-docs.github.io/apidocs/spot/en/#change-log
 module Binance
   module Client
     class REST

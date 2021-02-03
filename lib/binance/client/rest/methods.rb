@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# https://binance-docs.github.io/apidocs/spot/en/#change-log
 module Binance
   module Client
     class REST
@@ -61,7 +62,7 @@ module Binance
         # #all_orders
         { name: :all_orders, client: :signed,
           action: :get, endpoint: :all_orders },
-        # #account_info
+        # e.g. client.account_info(recv_window: 6000)
         { name: :account_info, client: :signed,
           action: :get, endpoint: :account },
         # #my_trades
