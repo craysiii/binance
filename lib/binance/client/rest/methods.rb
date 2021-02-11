@@ -128,6 +128,8 @@ module Binance
           action: :post, endpoint: :sub_account_permission },
         { name: :change_sub_account_commission, client: :broker,
           action: :post, endpoint: :sub_account_commission },
+        { name: :change_sub_account_bnb_burn, client: :broker,
+            action: :post, endpoint: :sub_account_bnb_burn },
         { name: :sub_account_transfer, client: :broker,
           action: :post, endpoint: :sub_account_transfer },
         { name: :sub_account_transfer_history, client: :broker,
