@@ -44,6 +44,7 @@ module Binance
         sub_account_permission:      'v1/broker/subAccountApi/permission',
         sub_account_commission:      'v1/broker/subAccountApi/commission',
         sub_account_bnb_burn:        'v1/broker/subAccount/bnbBurn/spot',
+        sub_account_bnb_burn_status: 'v1/broker/subAccount/bnbBurn/status',
         sub_account_transfer:        'v1/broker/transfer',
         sub_account_deposit_address: 'v3/depositAddress.html',
         sub_account_deposit_history: 'v1/broker/subAccount/depositHistory',
