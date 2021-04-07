@@ -22,6 +22,7 @@ module Binance
         all_orders:       'v3/allOrders',
         account:          'v3/account',
         my_trades:        'v3/myTrades',
+        oco:              'v3/order/oco',
         user_data_stream: 'v1/userDataStream',
 
         # Withdraw API Endpoints
