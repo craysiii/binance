@@ -59,7 +59,7 @@ module Binance
         # #all_orders
         { name: :all_orders, client: :signed,
           action: :get, endpoint: :all_orders },
-          # #create_oco!
+        #create_oco!
         { name: :create_oco!, client: :signed,
           action: :post, endpoint: :oco },
         # #account_info
