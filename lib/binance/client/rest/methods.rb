@@ -79,6 +79,9 @@ module Binance
         # #withdraw!
         { name: :withdraw!, client: :withdraw,
           action: :post, endpoint: :withdraw },
+        # #withdraw_sapi!
+        { name: :withdraw_sapi!, client: :withdraw_sapi_client,
+          action: :post, endpoint: :withdraw_sapi },
         # #deposit_history
         { name: :deposit_history, client: :withdraw,
           action: :get, endpoint: :deposit_history },
