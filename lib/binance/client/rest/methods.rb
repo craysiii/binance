@@ -80,7 +80,7 @@ module Binance
         { name: :withdraw!, client: :withdraw,
           action: :post, endpoint: :withdraw },
         # #withdraw_sapi!
-        { name: :withdraw_sapi!, client: :withdraw_sapi_client,
+        { name: :withdraw_sapi!, client: :withdraw_sapi,
           action: :post, endpoint: :withdraw_sapi },
         # #deposit_history
         { name: :deposit_history, client: :withdraw,

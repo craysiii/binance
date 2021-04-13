@@ -18,6 +18,7 @@ module Binance
         @clients[:verified] = verified_client api_key, adapter
         @clients[:signed]   = signed_client api_key, secret_key, adapter
         @clients[:withdraw] = withdraw_client api_key, secret_key, adapter
+        @clients[:withdraw_sapi] = withdraw_sapi_client api_key, secret_key, adapter
         @clients[:public_withdraw] = public_withdraw_client adapter
       end
 
