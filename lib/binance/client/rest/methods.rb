@@ -102,7 +102,10 @@ module Binance
           action: :get, endpoint: :withdraw_fee },
         # dust_log
         { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log }
+          action: :get, endpoint: :dust_log },
+        # all_coin_info
+        { name: :all_coin_info, client: :withdraw_sapi,
+          action: :get, endpoint: :all_coin_info }
       ].freeze
     end
   end
