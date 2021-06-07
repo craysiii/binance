@@ -26,13 +26,15 @@ module Binance
 
         # Withdraw API Endpoints
         withdraw:         'v3/withdraw.html',
+        withdraw_sapi:    'v1/capital/withdraw/apply',
         deposit_history:  'v3/depositHistory.html',
         withdraw_history: 'v3/withdrawHistory.html',
         deposit_address:  'v3/depositAddress.html',
         account_status:   'v3/accountStatus.html',
         system_status:    'v3/systemStatus.html',
         withdraw_fee:     'v3/withdrawFee.html',
-        dust_log:         'v3/userAssetDribbletLog.html'
+        dust_log:         'v3/userAssetDribbletLog.html',
+        all_coin_info:    'v1/capital/config/getall'
       }.freeze
     end
   end
