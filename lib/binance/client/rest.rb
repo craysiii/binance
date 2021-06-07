@@ -9,10 +9,9 @@ require_relative 'rest/methods'
 module Binance
   module Client
     class REST
-      BASE_URL = Rails.env.test? ? 'https://testnet.binance.vision'.freeze : 'https://api.binance.com'.freeze
-
       def initialize(api_key: '', secret_key: '',
-                     adapter: Faraday.default_adapter)
+                     adapter: Faraday.default_adapter,
+                     api_url: '')
         @clients = {}
         @clients[:public]   = public_client adapter
         @clients[:verified] = verified_client api_key, adapter
@@ -20,7 +19,10 @@ module Binance
         @clients[:withdraw] = withdraw_client api_key, secret_key, adapter
         @clients[:withdraw_sapi] = withdraw_sapi_client api_key, secret_key, adapter
         @clients[:public_withdraw] = public_withdraw_client adapter
+        @api_url = api_url
       end
+
+      BASE_URL = @api_url
 
       METHODS.each do |method|
         define_method(method[:name]) do |options = {}|
