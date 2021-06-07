@@ -13,16 +13,15 @@ module Binance
                      adapter: Faraday.default_adapter,
                      api_url: '')
         @clients = {}
+        @api_url = api_url
         @clients[:public]   = public_client adapter
         @clients[:verified] = verified_client api_key, adapter
         @clients[:signed]   = signed_client api_key, secret_key, adapter
         @clients[:withdraw] = withdraw_client api_key, secret_key, adapter
         @clients[:withdraw_sapi] = withdraw_sapi_client api_key, secret_key, adapter
         @clients[:public_withdraw] = public_withdraw_client adapter
-        @api_url = api_url
       end
 
-      BASE_URL = @api_url.freeze
 
       METHODS.each do |method|
         define_method(method[:name]) do |options = {}|
