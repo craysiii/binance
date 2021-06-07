@@ -22,7 +22,7 @@ module Binance
         @api_url = api_url
       end
 
-      BASE_URL = @api_url
+      BASE_URL = @api_url.freeze
 
       METHODS.each do |method|
         define_method(method[:name]) do |options = {}|
