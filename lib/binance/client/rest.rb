@@ -9,7 +9,7 @@ require_relative 'rest/methods'
 module Binance
   module Client
     class REST
-      BASE_URL = Rails.env.test? ? 'https://testnet.binance.vision'.freeze : 'https://api.binance.com'.freeze
+      BASE_URL = Rails.env.test? || Rails.env.development? ? 'https://testnet.binance.vision'.freeze : 'https://api.binance.com'.freeze
 
       def initialize(api_key: '', secret_key: '',
                      adapter: Faraday.default_adapter)
