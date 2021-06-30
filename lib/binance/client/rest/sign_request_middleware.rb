@@ -4,6 +4,9 @@ module Binance
       # Sign the query string using HMAC(sha-256) and appends to query string
       SignRequestMiddleware = Struct.new(:app, :secret_key) do
         def call(env)
+          fail ArgumentError, "secret_key is nil" if secret_key.nil?
+          fail ArgumentError, "env.url.query is nil" if env.url.query.nil?
+
           hash = OpenSSL::HMAC.hexdigest(
             OpenSSL::Digest.new('sha256'), secret_key, env.url.query
           )
