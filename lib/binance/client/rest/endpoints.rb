@@ -26,14 +26,14 @@ module Binance
         user_data_stream: 'v1/userDataStream',
 
         # Withdraw API Endpoints
-        withdraw:         'v3/withdraw.html',
-        deposit_history:  'v3/depositHistory.html',
-        withdraw_history: 'v3/withdrawHistory.html',
-        deposit_address:  'v3/depositAddress.html',
-        account_status:   'v3/accountStatus.html',
-        system_status:    'v3/systemStatus.html',
+        withdraw:         'v1/capital/withdraw/apply',
+        deposit_history:  'v1/capital/deposit/hisrec',
+        withdraw_history: 'v1/capital/withdraw/history',
+        deposit_address:  'v1/capital/deposit/address',
+        account_status:   'v1/account/status',
+        system_status:    'v1/system/status',
         withdraw_fee:     'v3/withdrawFee.html',
-        dust_log:         'v3/userAssetDribbletLog.html',
+        dust_log:         'v1/asset/dribblet',
 
         # Broker API Endpoints
         # https://binance-docs.github.io/Brokerage-API/General/
@@ -46,7 +46,7 @@ module Binance
         sub_account_bnb_burn:        'v1/broker/subAccount/bnbBurn/spot',
         sub_account_bnb_burn_status: 'v1/broker/subAccount/bnbBurn/status',
         sub_account_transfer:        'v1/broker/transfer',
-        sub_account_deposit_address: 'v3/depositAddress.html',
+        sub_account_deposit_address: 'v1/capital/deposit/address',
         sub_account_deposit_history: 'v1/broker/subAccount/depositHistory',
         sub_account_balances:        'v1/broker/subAccount/spotSummary'
       }.freeze
