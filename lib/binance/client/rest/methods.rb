@@ -105,7 +105,12 @@ module Binance
           action: :get, endpoint: :dust_log },
         # all_coin_info
         { name: :all_coin_info, client: :withdraw_sapi,
-          action: :get, endpoint: :all_coin_info }
+          action: :get, endpoint: :all_coin_info },
+
+        # Asset API methods
+        # trade_fee
+        { name: :trade_fee, client: :signed_sapi,
+          action: :get, endpoint: :trade_fee }
       ].freeze
     end
   end

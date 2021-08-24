@@ -24,6 +24,9 @@ module Binance
         my_trades:        'v3/myTrades',
         user_data_stream: 'v1/userDataStream',
 
+        # Asset API Endpoints
+        trade_fee:        'v1/asset/tradeFee',
+
         # Withdraw API Endpoints
         withdraw:         'v3/withdraw.html',
         withdraw_sapi:    'v1/capital/withdraw/apply',
