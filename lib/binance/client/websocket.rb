@@ -22,7 +22,7 @@ module Binance
       #   :error   - The Proc called when a stream receives an error (optional)
       #   :close   - The Proc called when a stream is closed (optional)
       def single(stream:, methods:)
-        create_stream("#{BASE_URL}/ws/#{stream_url(stream)}",
+        create_stream("#{BASE_URL}/ws/#{stream_url(**stream)}",
                       methods: methods)
       end
 
@@ -42,7 +42,7 @@ module Binance
       #   :error   - The Proc called when a stream receives an error (optional)
       #   :close   - The Proc called when a stream is closed (optional)
       def multi(streams:, methods:)
-        names = streams.map { |stream| stream_url(stream) }
+        names = streams.map { |stream| stream_url(**stream) }
         create_stream("#{BASE_URL}/stream?streams=#{names.join('/')}",
                       methods: methods)
       end
